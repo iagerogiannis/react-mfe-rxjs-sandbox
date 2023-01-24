@@ -8,7 +8,7 @@ import Handlers from './components/Handlers';
 export default () => {
   return (
     <div className='main-app'>
-      <h2>{'Main App (React)'}</h2>
+      <h1>{'Main App (React)'}</h1>
       <ContainerReactApp />
       <ContainerVueApp />
       <Handlers />

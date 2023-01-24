@@ -1,6 +1,6 @@
 <template>
   <div id="main-app-vue">
-    <h2>Main App (Vue)</h2>
+    <h1>Main App (Vue)</h1>
     <ContainerReactApp />
     <ContainerVueApp />
     <div class="handlers">
