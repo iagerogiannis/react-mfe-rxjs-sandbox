@@ -1,5 +1,5 @@
 {
-  "name": "counter-vue",
+  "name": "container-vue",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",

@@ -2,19 +2,19 @@
   <div id="container-vue">
     <h2>Container (Vue)</h2>
     <CounterReactApp />
-    <!-- <CounterVueApp /> -->
+    <CounterVueApp />
   </div>
 </template>
 
 <script>
 import CounterReactApp from './components/CounterReactApp.vue';
-// import CounterVueApp from './components/CounterVueApp.vue';
+import CounterVueApp from './components/CounterVueApp.vue';
 
 export default {
-  name: 'app',
+  name: 'containerVue',
   components: {
     CounterReactApp,
-    // CounterVueApp
+    CounterVueApp
   }
 }
 </script>

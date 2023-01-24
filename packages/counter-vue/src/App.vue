@@ -3,3 +3,9 @@
     <p>Counter (Vue)</p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'counterVue'
+}
+</script>

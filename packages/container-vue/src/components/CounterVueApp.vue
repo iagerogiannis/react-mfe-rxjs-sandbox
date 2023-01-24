@@ -1,12 +1,12 @@
 <template>
-  <div ref="ref" class="counter-vue-app"> </div>
+  <div ref="ref"></div>
 </template>
 
 <script>
 import { mount } from 'counterVue/CounterVueApp';
 
 export default {
-  name: 'CounterVueApp',
+  name: 'counterVueApp',
   mounted() {
     mount(this.$refs.ref);
   }

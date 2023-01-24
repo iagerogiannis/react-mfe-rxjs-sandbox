@@ -1,12 +1,12 @@
 <template>
-  <div ref="ref" class="counter-react-app"> </div>
+  <div ref="ref"></div>
 </template>
 
 <script>
 import { mount } from 'counterReact/CounterReactApp';
 
 export default {
-  name: 'CounterReactApp',
+  name: 'counterReactApp',
   mounted() {
     mount(this.$refs.ref);
   }
