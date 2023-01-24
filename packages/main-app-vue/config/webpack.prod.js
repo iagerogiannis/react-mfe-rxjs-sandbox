@@ -7,14 +7,14 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/counterVue/latest/',
+    publicPath: '/containerVue/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'counterVue',
+      name: 'mainAppVue',
       filename: 'remoteEntry.js',
       exposes: {
-        './CounterVueApp': './src/bootstrap',
+        './MainAppVue': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

@@ -7,10 +7,10 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:3002/',
+    publicPath: 'http://localhost:4002/',
   },
   devServer: {
-    port: 3002,
+    port: 4002,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -26,8 +26,8 @@ const devConfig = {
         './ContainerVueApp': './src/bootstrap',
       },
       remotes: {
-        counterReact: 'counterReact@http://localhost:3011/remoteEntry.js',
-        counterVue: 'counterVue@http://localhost:3012/remoteEntry.js',
+        counterReact: 'counterReact@http://localhost:5001/remoteEntry.js',
+        counterVue: 'counterVue@http://localhost:5002/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),

@@ -7,10 +7,10 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:3011/',
+    publicPath: 'http://localhost:5001/',
   },
   devServer: {
-    port: 3011,
+    port: 5001,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -21,6 +21,9 @@ const devConfig = {
       filename: 'remoteEntry.js',
       exposes: {
         './CounterReactApp': './src/bootstrap',
+      },
+      remotes: {
+        containerReact: 'containerReact@http://localhost:4001/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),

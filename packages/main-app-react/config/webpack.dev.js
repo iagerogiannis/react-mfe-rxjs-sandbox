@@ -7,10 +7,10 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:4001/',
+    publicPath: 'http://localhost:3001/',
   },
   devServer: {
-    port: 4001,
+    port: 3001,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -18,14 +18,9 @@ const devConfig = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'containerReact',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './ContainerReactApp': './src/bootstrap',
-        './countStore': './src/stores/countStore'
-      },
       remotes: {
-        counterReact: 'counterReact@http://localhost:5001/remoteEntry.js',
-        counterVue: 'counterVue@http://localhost:5002/remoteEntry.js',
+        containerReact: 'containerReact@http://localhost:4001/remoteEntry.js',
+        containerVue: 'containerVue@http://localhost:4002/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),

@@ -1,20 +1,21 @@
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const packageJson = require('../package.json');
 const commonConfig = require('./webpack.common');
+const packageJson = require('../package.json');
+
+const domain = process.env.PRODUCTION_DOMAIN;
 
 const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/counterVue/latest/',
+    publicPath: '/mainAppReact/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'counterVue',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './CounterVueApp': './src/bootstrap',
+      name: 'mainAppReact',
+      remotes: {
+        mainAppReact: `mainAppReact@${domain}/mainAppReact/latest/remoteEntry.js`
       },
       shared: packageJson.dependencies,
     }),
