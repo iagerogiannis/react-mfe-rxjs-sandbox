@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => {
   return (
-    <h1>{'Counter (React)'}</h1>
+    <p>{'Counter (React)'}</p>
   );
 };

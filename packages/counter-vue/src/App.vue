@@ -1,5 +1,5 @@
 <template>
   <div id="counter-vue">
-    <h1>Counter (Vue)</h1>
+    <p>Counter (Vue)</p>
   </div>
 </template>

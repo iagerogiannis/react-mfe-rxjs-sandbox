@@ -9,13 +9,13 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/container/latest/',
+    publicPath: '/containerReact/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'containerReact',
       remotes: {
-        counterReact: `counterReact@${domain}/counterReact/latest/remoteEntry.js`
+        containerReact: `containerReact@${domain}/containerReact/latest/remoteEntry.js`
       },
       shared: packageJson.dependencies,
     }),

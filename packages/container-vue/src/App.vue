@@ -1,17 +1,20 @@
 <template>
   <div id="container-vue">
-    <h1>Container (Vue)</h1>
+    <h2>Container (Vue)</h2>
     <CounterReactApp />
+    <!-- <CounterVueApp /> -->
   </div>
 </template>
 
 <script>
 import CounterReactApp from './components/CounterReactApp.vue';
+// import CounterVueApp from './components/CounterVueApp.vue';
 
 export default {
   name: 'app',
   components: {
-    CounterReactApp
+    CounterReactApp,
+    // CounterVueApp
   }
 }
 </script>

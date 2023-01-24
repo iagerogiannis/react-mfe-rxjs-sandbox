@@ -24,7 +24,13 @@ module.exports = {
             },
           },
         ],
-      }
+        include: /\.module\.s?css$/,
+      },
+      {
+        test: /\.s?css$/,
+        use: ["style-loader", "css-loader"],
+        exclude: /\.module\.s?css$/,
+      },
     ],
   },
 };

@@ -7,7 +7,7 @@ import './app.css';
 export default () => {
   return (
     <div className='container'>
-      <h1>{'Container (React)'}</h1>
+      <h2>{'Container (React)'}</h2>
       <CounterReactApp />
       <CounterVueApp />
     </div>
