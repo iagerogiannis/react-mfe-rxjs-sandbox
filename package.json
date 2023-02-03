@@ -1,0 +1,23 @@
+{
+  "name": "react-mfe-rxjs-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run start:app --stream"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iagerogiannis/react-mfe-rxjs-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iagerogiannis/react-mfe-rxjs-sandbox/issues"
+  },
+  "homepage": "https://github.com/iagerogiannis/react-mfe-rxjs-sandbox#readme",
+  "devDependencies": {
+    "lerna": "<3.23.0"
+  }
+}
