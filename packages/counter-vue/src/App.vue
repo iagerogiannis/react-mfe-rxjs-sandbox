@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import countStore from 'containerReact/countStore';
 
 export default {
   name: 'counterVue',
+  props: ['countStore'],
   data() {
     return {
-      counterState: countStore.initialState
+      counterState: this.countStore.initialState
     }
   },
   methods: {
@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    countStore.subscribe(this.setCounterState);
+    this.countStore.subscribe(this.setCounterState);
   }
 }
 </script>

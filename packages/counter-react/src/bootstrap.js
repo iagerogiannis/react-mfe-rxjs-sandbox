@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 // Mount function to start up the app
-const mount = (el) => {
-  ReactDOM.render(<App />, el);
+const mount = (el, { countStore }) => {
+  ReactDOM.render(<App countStore={countStore} />, el);
 };
 
 // If we are in development and in isolation,

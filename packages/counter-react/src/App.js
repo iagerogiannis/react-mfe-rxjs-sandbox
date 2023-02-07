@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import countStore from 'containerReact/countStore';
 
-export default () => {
+const CounterReactApp = ({ countStore }) => {
   const [countState, setCountState] = useState(countStore.initialState);
 
   useEffect(() => {
@@ -17,3 +16,5 @@ export default () => {
     <p>{`React Counter: ${countState.count}`}</p>
   );
 };
+
+export default CounterReactApp;

@@ -1,11 +1,15 @@
 <template>
   <div id="main-app-vue">
     <h1>Main App (Vue)</h1>
-    <ContainerReactApp />
-    <ContainerVueApp />
+    <ContainerReactApp v-if="countReactStore" v-bind:countStore="countReactStore" />
     <div class="handlers">
-      <button v-on:click="decrement">-1</button>
-      <button v-on:click="increment">+1</button>
+      <button v-on:click="reactDecrement">-1</button>
+      <button v-on:click="reactIncrement">+1</button>
+    </div>
+    <ContainerVueApp v-if="countVueStore" v-bind:countStore="countVueStore" />
+    <div class="handlers">
+      <button v-on:click="vueDecrement">-1</button>
+      <button v-on:click="vueIncrement">+1</button>
     </div>
   </div>
 </template>
@@ -13,7 +17,7 @@
 <script>
 import ContainerReactApp from './components/ContainerReactApp.vue';
 import ContainerVueApp from './components/ContainerVueApp.vue';
-import countStore from 'containerReact/countStore';
+import createCountContext from 'containerReact/countStore';
 
 export default {
   name: 'containerVue',
@@ -21,10 +25,27 @@ export default {
     ContainerReactApp,
     ContainerVueApp
   },
+  data() {
+    return {
+      countReactStore: null,
+      countVueStore: null
+    };
+  },
   methods: {
-    increment: () => countStore.increment(),
-    decrement: () => countStore.decrement(),
-  }
+    reactIncrement: () => null,
+    reactDecrement: () => null,
+    vueIncrement: () => null,
+    vueDecrement: () => null,
+  },
+  mounted() {
+    this.countReactStore = createCountContext().countStore;
+    this.reactIncrement = this.countReactStore.increment;
+    this.reactDecrement = this.countReactStore.decrement;
+
+    this.countVueStore = createCountContext().countStore;
+    this.vueIncrement = this.countVueStore.increment;
+    this.vueDecrement = this.countVueStore.decrement;
+  },
 }
 </script>
 

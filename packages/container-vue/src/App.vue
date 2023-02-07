@@ -1,8 +1,8 @@
 <template>
   <div id="container-vue">
     <h2>Container (Vue)</h2>
-    <CounterReactApp />
-    <CounterVueApp />
+    <CounterReactApp v-bind:countStore="countStore" />
+    <CounterVueApp v-bind:countStore="countStore" />
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import CounterVueApp from './components/CounterVueApp.vue';
 
 export default {
   name: 'containerVue',
+  props: ['countStore'],
   components: {
     CounterReactApp,
     CounterVueApp
