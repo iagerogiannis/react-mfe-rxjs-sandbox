@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo } from 'react';
 import ContainerReactApp from './components/ContainerReactApp';
 import ContainerVueApp from './components/ContainerVueApp';
 import './app.css';
@@ -7,16 +7,16 @@ import createCountContext from 'containerReact/countStore';
 
 
 export default () => {
-  const countReactStoreRef = useRef(createCountContext().countStore);
-  const countVueStoreRef = useRef(createCountContext().countStore);
+  const countReactStore = useMemo(() => createCountContext().countStore, []);
+  const countVueStore = useMemo(() => createCountContext().countStore, []);
 
   return (
     <div className='main-app'>
       <h1>{'Main App (React)'}</h1>
-      <ContainerReactApp countStore={countReactStoreRef.current} />
-      <Handlers countStore={countReactStoreRef.current} />
-      <ContainerVueApp countStore={countVueStoreRef.current} />
-      <Handlers countStore={countVueStoreRef.current} />
+      <ContainerReactApp countStore={countReactStore} />
+      <Handlers countStore={countReactStore} />
+      <ContainerVueApp countStore={countVueStore} />
+      <Handlers countStore={countVueStore} />
     </div>
   );
 };
